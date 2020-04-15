@@ -2,11 +2,9 @@ import React from "react";
 import {
   Link
 } from "react-router-dom";
-import BlogDetail from './BlogDetail';
-import Header from '../Menu/header'
 
 function ArticleCard(prop) {
-  const { id, categoryName, title } = prop;
+  const { id, categoryName, title , postedAt, summary, imageUrl} = prop;
   return (
     <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div className="col p-4 d-flex flex-column position-static">
@@ -78,6 +76,11 @@ class Blog extends React.Component {
           <div className="col-md-6" key={index}>
             <ArticleCard
               id={article.id}
+              categoryName={article.categoryName}
+              postedAt={article.postedAt}
+              summary={article.summary}
+              imageUrl={article.imageUrl}
+              title={article.title}
             />
           </div>
         ))}
@@ -86,3 +89,4 @@ class Blog extends React.Component {
   }
 }
 
+export default Blog;
